@@ -1,0 +1,60 @@
+
+:root {
+  --error: #E54B4B;
+  --background: #201c1b;
+  --panel: #2b2827;
+  --text: #c4b6ab;
+  --accent: #a07150;
+  --buttonBg: #453934;
+}
+
+* { box-sizing: border-box }
+html { background-color: var(--background) }
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400 900;
+  src: url('./AlegreyaSans.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Alegreya Sans Italic';
+  font-style: italic;
+  font-weight: 400 900;
+  src: url('./AlegreyaSans-Italic.woff2') format('woff2');
+}
+
+body, a {
+  font-family: 'Alegreya Sans', Arial, Helvetica, sans-serif;
+  font-size: 14pt;
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Alegreya', 'Times New Roman', Times, serif;
+}
+
+a {
+  color: var(--accent);
+  font-weight: bold;
+  font-weight: normal;
+}
+
+button {
+  font-family: 'Alegreya Sans';
+  font-size: 14pt;
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: var(--text);
+  background-color: var(--buttonBg);
+  border: 1px color-mix(in srgb, var(--buttonBg), var(--accent) 10%) solid;
+  cursor: pointer;
+}
+
+  button:hover {
+    background-color: color-mix(in srgb, var(--buttonBg), var(--accent) 10%);
+    border: 1px color-mix(in srgb, var(--buttonBg), var(--accent) 30%) solid;
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+    color: #dacfc6;
+  }

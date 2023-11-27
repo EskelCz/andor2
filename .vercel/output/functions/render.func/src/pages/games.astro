@@ -1,0 +1,20 @@
+---
+	import Layout from '../layouts/layout.astro'
+  import { isUser } from '@lib/supabase'
+
+  const isLogged = isUser(Astro.cookies)
+---
+
+<Layout title='Hry' padding='40px 60px 60px 60px'>
+  <h1>Hry</h1>
+
+  {isLogged ? (
+    <div>
+      <p>Vítej. Tady bude seznam her.</p>
+    </div>
+  ) : (
+    <div>
+      <p>Prosím přihlaš se pro zobrazení seznamu her.</p>
+    </div>
+  )}
+</Layout>

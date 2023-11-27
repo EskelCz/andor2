@@ -3,7 +3,7 @@
   import { supabase, getUser } from '@lib/database'
 
 	const { user, profile } = await getUser(Astro.cookies)
-	if (user && !profile && Astro.url.pathname !== '/onboarding') { return Astro.redirect('./onboarding') } // if profile is missing, go create it
+	if (user && !profile) { return Astro.redirect('./onboarding') } // if profile is missing, go create it
 
   const { data, error } = await supabase.from('games').select('name, author') // author()
 ---

@@ -1,5 +1,5 @@
 <script>
-  export let path
+  import { isActive, url } from '@roxi/routify'
 </script>
 
 <header>
@@ -7,8 +7,8 @@
     <img src='./logo.png' alt='Andor2.cz logo'>
   </a>
   <nav>
-    <a href='/' class={path === '/' ? 'active' : ''}>Novinky</a>
-    <a href='/games' class={path === '/games' ? 'active' : ''}>Hry</a>
+    <a href={$url('/')} class:active={$isActive('/index')}>Novinky</a>
+    <a href={$url('/games')} class:active={$isActive('/games')}>Hry</a>
   </nav>
 </header>
 
