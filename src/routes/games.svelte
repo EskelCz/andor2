@@ -1,8 +1,25 @@
-<script>
+<script context='module'>
   import { supabase } from '@lib/database'
   import { user } from '@stores/session'
 
-  const {data: games, error} = await supabase.from('games').select('*')
+  export const load = async () => {
+      // fetch props before the component gets loaded
+      return {
+        props: {
+          games: await getGames(),
+        }
+      }
+    }
+
+  async function getGames () {
+    const { data, error } = await supabase.from('games').select('*')
+    console.log('games', data)
+    return data
+  }
+</script>
+
+<script>
+  export let games = []
 </script>
 
 <svelte:head>

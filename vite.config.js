@@ -15,9 +15,15 @@ export default defineConfig({
   define: { '__APP_VERSION__': JSON.stringify(pkg.version) },
   plugins: [
     ViteAliases(),
-    routify({ ssr: { enable: true } }),
+    routify({
+      ssr: {
+        enable: true,
+        prerender: true
+      }
+    }),
     svelte({
-      preprocess: sveltePreprocess()
+      preprocess: sveltePreprocess(),
+      compilerOptions: { hydratable: true }
     })
   ]
 })

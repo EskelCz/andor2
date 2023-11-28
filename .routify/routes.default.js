@@ -15,6 +15,34 @@ export default {
   "routifyDir": import.meta.url,
   "children": [
     {
+      "meta": {},
+      "id": "_default__layout_svelte",
+      "name": "_layout",
+      "file": {
+        "path": "src/routes/_layout.svelte",
+        "dir": "src/routes",
+        "base": "_layout.svelte",
+        "ext": ".svelte",
+        "name": "_layout"
+      },
+      "asyncModule": () => import('../src/routes/_layout.svelte'),
+      "children": []
+    },
+    {
+      "meta": {},
+      "id": "_default_games_svelte",
+      "name": "games",
+      "file": {
+        "path": "src/routes/games.svelte",
+        "dir": "src/routes",
+        "base": "games.svelte",
+        "ext": ".svelte",
+        "name": "games"
+      },
+      "asyncModule": () => import('../src/routes/games.svelte'),
+      "children": []
+    },
+    {
       "meta": {
         "isDefault": true
       },

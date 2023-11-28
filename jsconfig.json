@@ -43,6 +43,9 @@
       ],
       "@stores/*": [
         "src/stores/*"
+      ],
+      "@routes/*": [
+        "src/routes/*"
       ]
     }
   }

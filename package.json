@@ -3,9 +3,10 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "watch": "vite",
+    "serve": "vite",
     "build": "routify",
-    "dev": "run-p watch build",
+    "watch": "routify -w",
+    "dev": "run-p serve watch",
     "db": "supabase start",
     "sync": "PGPASSWORD=postgres psql -h localhost -U postgres -d postgres -p 54322 -a -f src/db/schema.sql"
   },
@@ -14,7 +15,7 @@
     "notyf": "3.10.0"
   },
   "devDependencies": {
-    "@roxi/routify": "2.18.12",
+    "@roxi/routify": "^3.0.0-next.196",
     "svelte": "3.54.0",
     "svelte-preprocess": "4.7.3",
     "@sveltejs/vite-plugin-svelte": "2.0.4",
